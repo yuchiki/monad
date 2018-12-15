@@ -1,0 +1,9 @@
+bin
+obj
+### https://raw.github.com/github/gitignore/340e2fe08a2356c2e3760ff58c3a9e1fddf08060/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
