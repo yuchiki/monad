@@ -10,5 +10,7 @@
     <Content Include="Maybe.cs" />
     <Content Include=".gitignore" />
     <Content Include="Writer.cs" />
+    <Content Include="State.cs" />
+    <Content Include="Stack.cs" />
   </ItemGroup>
 </Project>
