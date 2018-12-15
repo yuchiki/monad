@@ -4,14 +4,28 @@ using static Monad.Maybe;
 using static System.Console;
 
 namespace Monad {
-    class Program {
+    static class Program {
         static void Main() {
-            var N = Nothing<int>();
-            WriteLine(f(1, 2, 3));
+            MaybeTest();
+            WriterTest();
+        }
+
+        static void MaybeTest() {
+            var N = Maybe.Nothing<int>();
             WriteLine(f(N, 2, 3));
-            WriteLine(f(1, N, 3));
-            WriteLine(f(1, 2, N));
-            WriteLine(f(N, N, 3));
+            WriteLine(f(1, N, N));
+            WriteLine(f(1, 2, 3));
+            WriteLine();
+        }
+
+        static void WriterTest() {
+            var n =
+                from a in (Writer<int>) (3, "a is 3, ")
+            from b in (Writer<int>) (a + 4, "b is a + 4,")
+            from c in (Writer<int>) (a * b, "c is a * b,")
+            select c;
+            WriteLine($"n.Value = {n.Value}, n.Log = {n.Log}");
+            WriteLine();
         }
 
         static Maybe<int> f(Maybe<int> ma, Maybe<int> mb, Maybe<int> mc) =>
@@ -19,6 +33,8 @@ namespace Monad {
         from b in mb
         from c in mc
         select a * 100 + b * 10 + c;
+
+        static(int, string) LoggedAdd(this int n, int m) => (n + m, $"{m} is added.\n");
 
     }
 }

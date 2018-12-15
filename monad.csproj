@@ -9,5 +9,6 @@
     <Content Include="Monad.cs" />
     <Content Include="Maybe.cs" />
     <Content Include=".gitignore" />
+    <Content Include="Writer.cs" />
   </ItemGroup>
 </Project>
