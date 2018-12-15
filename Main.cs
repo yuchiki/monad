@@ -34,7 +34,6 @@ namespace Monad {
         from c in mc
         select a * 100 + b * 10 + c;
 
-        static(int, string) LoggedAdd(this int n, int m) => (n + m, $"{m} is added.\n");
 
     }
 }
